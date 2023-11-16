@@ -2,11 +2,45 @@ import '@/styles/globals.css';
 import { siweClient } from '@/utils/siweClient';
 import { ConnectKitProvider, SIWESession, getDefaultConfig } from 'connectkit';
 import type { AppProps } from 'next/app';
-import { WagmiConfig, createConfig } from 'wagmi';
-import Headers from '../component/Header'
-import Footer from '../component/Footer'
+import { WagmiConfig, configureChains, createConfig } from 'wagmi';
+import { InjectedConnector } from 'wagmi/connectors/injected'
+import { Chain } from 'wagmi'
+import { mainnet, polygon, optimism } from 'wagmi/chains'
+import { publicProvider } from 'wagmi/providers/public'
+ 
+export const horizen = {
+  id: 7332,
+  name: 'Horizen',
+  network: 'horizen',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Horizen',
+    symbol: 'ZEN',
+  },
+  rpcUrls: {
+    public: { http: ['https://rpc.ankr.com/horizen_eon'] },
+    default: { http: ['https://rpc.ankr.com/horizen_eon'] },
+  },
+  blockExplorers: {
+    etherscan: { name: 'Horizen', url: 'https://eon-explorer.horizenlabs.io/' },
+    default: { name: 'Horizen', url: 'https://eon-explorer.horizenlabs.io/' },
+  },
+ 
+} 
+
+const { chains, publicClient } = configureChains(
+  [mainnet, polygon, optimism, horizen],
+  [publicProvider()],
+
+)
+
+
 const config = createConfig(
+
   getDefaultConfig({
+    autoConnect: true,
+    connectors: [new InjectedConnector({ chains })],
+    publicClient,
     alchemyId: process.env.NEXT_PUBLIC_ALCHEMY_KEY,
     walletConnectProjectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!,
     appName: 'My ConnectKit App',
