@@ -1,10 +1,10 @@
 import '@/styles/globals.css';
 import { siweClient } from '@/utils/siweClient';
-import { ConnectKitProvider, SIWESession, getDefaultConfig } from 'connectkit';
+import { ConnectKitProvider,  getDefaultConfig } from 'connectkit';
 import type { AppProps } from 'next/app';
 import { WagmiConfig, configureChains, createConfig } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected'
-import { Chain } from 'wagmi'
+
 import { mainnet, polygon, optimism } from 'wagmi/chains'
 import { publicProvider } from 'wagmi/providers/public'
  

@@ -8,7 +8,7 @@ import Footer from '../component/Footer'
 import Link from "next/link";
 import { useState } from "react";
 import { getWalletClient } from '@wagmi/core'
-import { getEthersSigner } from '../utils/ether'
+
 import { avaxProvider } from "@/utils/const";
 
 

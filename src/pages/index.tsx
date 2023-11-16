@@ -1,10 +1,10 @@
-import { ConnectKitButton, SIWEButton, SIWEConfig, SIWESession, useSIWE } from 'connectkit';
+import {  SIWEButton} from 'connectkit';
 import Headers from '../component/Header'
 import Footer from '../component/Footer'
 import React from 'react';
-import { useAccount, useNetwork, useSignMessage } from 'wagmi';
+
 import {siweClient} from '../utils/siweClient'
-import { SiweMessage } from 'siwe'
+
 import Link from 'next/link';
 
  
@@ -12,7 +12,6 @@ import Link from 'next/link';
 
 export default function Home() {
 
-  const { data, isSignedIn, signOut, signIn, status } = useSIWE();
 console.log(siweClient)
 
 

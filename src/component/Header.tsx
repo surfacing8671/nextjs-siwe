@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import { ConnectKitButton } from "connectkit";
 
 export const dynamic = "force-dynamic";
