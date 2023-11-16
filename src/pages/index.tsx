@@ -19,7 +19,8 @@ console.log(siweClient)
 
   
   return (
-    <><Headers /> <div className='text-center text-5xl mt-6 text-white'>Horizen Gas Relayer</div><div></div><div className='text-center text-4xl flex flex-row flex-wrap pl-28 pr-28 mt-44 -mb-40 text-white'>To transact and obtain your initial gas token on Horizen, you must sign in with Ethereum first to continue</div>
+    <><Headers /> <div className='text-center text-5xl mt-6 text-white'>Horizen Gas Relayer</div><div></div>
+    <div className='flex flex-row justify-center'><div className='text-center text-4xl flex flex-row flex-wrap pl-28 pr-28 mt-44 -mb-40 text-white'>To transact and obtain your initial gas token on Horizen, you must sign in with Ethereum first to continue</div></div>
      <div className='flex flex-col justify-center self-center items-center content-center'> <div className='text-3xl -mt-10 -pt-10'>
     <SIWEButton/>
     </div></div><div className="flex flex-col items-center justify-center min-h-screen py-1">
